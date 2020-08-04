@@ -17,6 +17,8 @@ help:
 	@echo "list:       get all resources"
 	@echo "one:        get single resource"
 	@echo "post:       create single resource"
+	@echo "patch:      partial update of single resource (title)"
+	@echo "put:        full update of single resource (title, description)"
 	@echo
 	@echo "🛰  API - browsable"
 	@echo
@@ -61,6 +63,12 @@ one:
 
 post:
 	poetry run http POST $(api_url)/list/ title=hi description="hi desc"
+
+patch:
+	poetry run http PATCH $(api_url)/1/ title=$(title)
+
+put:
+	poetry run http PUT $(api_url)/1/ title=$(title) description=$(desc)
 
 #
 # 🛰 API - browsable
