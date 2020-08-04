@@ -53,7 +53,7 @@ super:
 #
 
 list:
-	poetry run http GET $(api_url)/
+	poetry run http GET $(api_url)/list
 
 one:
 	poetry run http GET $(api_url)/1/
@@ -63,7 +63,7 @@ one:
 #
 
 gui-list:
-	open $(api_url)/
+	open $(api_url)/list
 
 gui-one:
 	open $(api_url)/1/

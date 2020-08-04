@@ -4,6 +4,6 @@ from .views import TodoDetail, TodoList
 
 urlpatterns = [
     path('<int:pk>/', TodoDetail.as_view(), name='get_detail'),
-    path('', TodoList.as_view(), name='get_list'),
+    path('list/', TodoList.as_view(), name='get_list'),
 ]
 
