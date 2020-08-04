@@ -14,13 +14,14 @@ help:
 	@echo
 	@echo "📡  API - shell"
 	@echo
-	@echo "list:       get all posts"
-	@echo "one:        get single post"
+	@echo "list:       get all resources"
+	@echo "one:        get single resource"
+	@echo "post:       create single resource"
 	@echo
 	@echo "🛰  API - browsable"
 	@echo
-	@echo "gui-list:   get all posts"
-	@echo "gui-one:    get single post"
+	@echo "gui-list:   get all resources"
+	@echo "gui-one:    get single resources"
 	@echo
 	@echo "🖥  OTHER INTERFACES"
 	@echo
@@ -53,20 +54,24 @@ super:
 #
 
 list:
-	poetry run http GET $(api_url)/list
+	poetry run http GET $(api_url)/list/
 
 one:
 	poetry run http GET $(api_url)/1/
+
+post:
+	poetry run http POST $(api_url)/list/ title=hi description="hi desc"
 
 #
 # 🛰 API - browsable
 #
 
+# n.b. these URLs don't need trailing slash bc: req via Chrome, Django 301, Chrome redirect
 gui-list:
 	open $(api_url)/list
 
 gui-one:
-	open $(api_url)/1/
+	open $(api_url)/1
 
 #
 # 🖥  UI
