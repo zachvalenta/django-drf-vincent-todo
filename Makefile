@@ -14,6 +14,7 @@ help:
 	@echo
 	@echo "📡  API - shell"
 	@echo
+	@echo "hc:         get healthcheck endpoint"
 	@echo "list:       get all resources"
 	@echo "one:        get single resource"
 	@echo "post:       create single resource"
@@ -54,6 +55,9 @@ super:
 #
 # 📡 API - shell
 #
+
+hc:
+	poetry run http GET $(base_url)/healthcheck/
 
 list:
 	poetry run http GET $(api_url)/
