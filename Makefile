@@ -56,13 +56,13 @@ super:
 #
 
 list:
-	poetry run http GET $(api_url)/list/
+	poetry run http GET $(api_url)/
 
 one:
 	poetry run http GET $(api_url)/1/
 
 post:
-	poetry run http POST $(api_url)/list/ title=hi description="hi desc"
+	poetry run http POST $(api_url)/ title=hi description="hi desc"
 
 patch:
 	poetry run http PATCH $(api_url)/1/ title=$(title)
@@ -76,7 +76,7 @@ put:
 
 # n.b. these URLs don't need trailing slash bc: req via Chrome, Django 301, Chrome redirect
 gui-list:
-	open $(api_url)/list
+	open $(api_url)/
 
 gui-one:
 	open $(api_url)/1
